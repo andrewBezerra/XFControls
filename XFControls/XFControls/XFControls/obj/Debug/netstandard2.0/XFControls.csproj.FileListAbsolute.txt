@@ -1,0 +1,13 @@
+C:\DEV\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.deps.json
+C:\DEV\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.dll
+C:\DEV\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\ref\XFControls.dll
+C:\DEV\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.pdb
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.csprojAssemblyReference.cache
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.AssemblyInfoInputs.cache
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.AssemblyInfo.cs
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XamlC.stamp
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.dll
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\ref\XFControls.dll
+C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.pdb
