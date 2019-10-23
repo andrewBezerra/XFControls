@@ -502,3 +502,4 @@ C:\DEV\XFControls\XFControls\XFControls\XFControls.Android\obj\Debug\90\android\
 C:\DEV\XFControls\XFControls\XFControls\XFControls.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\SelectableItemsViewRenderer_3.java
 C:\DEV\XFControls\XFControls\XFControls\XFControls.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\StructuredItemsViewAdapter_2.java
 C:\DEV\XFControls\XFControls\XFControls\XFControls.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\StructuredItemsViewRenderer_3.java
+C:\DEV\XFControls\XFControls\XFControls\XFControls.Android\obj\Debug\90\android\src\md5d742a04d57ca30acc77a600183625058\EntryCustomRenderer.java
