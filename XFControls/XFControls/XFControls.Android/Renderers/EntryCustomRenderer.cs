@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
@@ -18,6 +18,7 @@ using Android.Text;
 using Android.Views.InputMethods;
 using XFControls.Controls;
 using XFControls.Droid.Renderers;
+using Android.Graphics.Drawables;
 
 [assembly: ExportRenderer(typeof(TextInput), typeof(EntryCustomRenderer))]
 
@@ -26,47 +27,43 @@ namespace XFControls.Droid.Renderers
     public class EntryCustomRenderer : FormsAppCompat.ViewRenderer<TextInput, TextInputLayout>, ITextWatcher,
         TextView.IOnEditorActionListener
     {
+        private const int DefaultPadding = 20;
+        private static readonly Color SemiTransparent = Color.FromHex("#80000000");
+
+        protected AColor GetPlaceholderColor() => ColorHelper.ConvertToAndroid(Element?.PlaceholderColor);
+
         public EntryCustomRenderer(Context context) : base(context)
         {
             AutoPackage = false;
         }
-        protected AColor GetPlaceholderColor() => Element?.PlaceholderColor.ToAndroid(Color.FromHex("#80000000")) ?? Color.FromHex("#80000000").ToAndroid();
+
         protected override TextInputLayout CreateNativeControl()
         {
-            ////var layout = (TextInputLayout)LayoutInflater
-            ////    .From(Context)
-            ////    .Inflate(Resource.Layout.TextInputLayou, null);
-
-            //return new TextInputLayout(Context);
             var textInputLayout = new TextInputLayout(Context);
             var editText = new AppCompatEditText(Context)
             {
                 SupportBackgroundTintList = ColorStateList.ValueOf(GetPlaceholderColor())
             };
-            //Drawable TrailingIcon = 
-            //editText.SetCompoundDrawablesWithIntrinsicBounds()
-            editText.SetTextSize(ComplexUnitType.Sp, (float)Element.FontSize);
 
+            editText.SetTextSize(ComplexUnitType.Sp, (float)Element.FontSize);
             editText.InputType = Element.Keyboard.ToInputType();
+
             textInputLayout.AddView(editText);
             return textInputLayout;
         }
+
         protected override void OnElementChanged(ElementChangedEventArgs<TextInput> e)
         {
             base.OnElementChanged(e);
-            if (e.NewElement != null)
-            {
-                var ctrl = CreateNativeControl();
-                SetNativeControl(ctrl);
-            }
+            
+            if (!(Control is TextInputLayout))
+                SetNativeControl(CreateNativeControl());
 
             Control.EditText.AddTextChangedListener(this);
             Control.EditText.SetOnEditorActionListener(this);
             Control.EditText.ImeOptions = ImeAction.Done;
             Control.EditText.SetElegantTextHeight(true);
-            //Control.EditText.SetRawInputType(InputTypes.TextVariationEmailAddress);
-            //Control.EditText.SetCompoundDrawablesRelativeWithIntrinsicBounds(Context.GetDrawable(Resource.Drawable.email16), null, null, null);
-            //Control.EditText.SetBackgroundColor(AColor.Gainsboro);
+
             SetHintText();
             SetHelperText();
             SetBoxBackgroundMode();
@@ -74,78 +71,61 @@ namespace XFControls.Droid.Renderers
             SetCounterMax();
             SetPasswordMode();
             SetIcons();
-            //await Task.WhenAll(t1, t2, t3, t4, t5, t6, t7);
-
         }
 
-        public virtual void OnTextChanged(ICharSequence s, int start, int before, int count)
-        {
-            if (Element == null || (string.IsNullOrWhiteSpace(Element.Text) && (s.Length() == 0)) || Control == null || Control.Handle == IntPtr.Zero || Control.EditText == null || Control.EditText.Handle == IntPtr.Zero)
-                return;
-
-            ((IElementController)Element)?.SetValueFromRenderer(Entry.TextProperty, s.ToString());
-        }
         private void SetIcons()
         {
-
             Control.EditText.SetCompoundDrawablesRelativeWithIntrinsicBounds(
-                Element.LeadingIcon != null ?
-                Context.GetDrawable(Element.LeadingIcon) : null,
-                null,
-                Element.TrailingIcon != null ?
-                Context.GetDrawable(Element.TrailingIcon) : null,
-                null);
+                Context.TryGetDrawable(Element?.LeadingIcon), null, Context.TryGetDrawable(Element?.TrailingIcon), null);
 
             if (!string.IsNullOrEmpty(Element.LeadingIcon) || !string.IsNullOrEmpty(Element.TrailingIcon))
-                Control.EditText.CompoundDrawablePadding = 20;
-
+                Control.EditText.CompoundDrawablePadding = DefaultPadding;
         }
+
         private void SetPasswordMode()
         {
+            if (!Element.IsPassword) return;
 
-            if (Element.IsPassword)
-            {
-                Control.EditText.TransformationMethod = new PasswordTransformationMethod();
-                Control.PasswordVisibilityToggleEnabled = true;
-
-            }
-
+            //Garantir que estamos descartando objetos nao usados
+            Control.EditText?.TransformationMethod?.Dispose();
+            Control.EditText.TransformationMethod = new PasswordTransformationMethod();
+            Control.PasswordVisibilityToggleEnabled = true;
         }
+
         private void SetBorderRadius()
         {
+            var sidePadding = Element.BorderRadius >= 40 ? 50 : DefaultPadding;
 
-            int paddingleft = 20;
-            int paddingright = 20;
-            if (Element.BorderRadius >= 40)
-                paddingleft = paddingright = 50;
+            Control.SetBoxCornerRadii(Element.BorderRadius, Element.BorderRadius,
+                GetBottomBorderRadius(), GetBottomBorderRadius());
 
-            if (Element.ContainerType == Container.Outlined)
-                Control.SetBoxCornerRadii(Element.BorderRadius, Element.BorderRadius, Element.BorderRadius, Element.BorderRadius);
-            else
-                Control.SetBoxCornerRadii(Element.BorderRadius, Element.BorderRadius, 0, 0);
-
-            Control.EditText.SetPadding(paddingleft, 20, paddingright, 20);
+            Control.EditText.SetPadding(sidePadding, DefaultPadding, sidePadding, DefaultPadding);
 
         }
+
+        private int GetBottomBorderRadius()
+        {
+            return Element.ContainerType == Container.Outlined
+                ? Element.BorderRadius : 0;
+        }
+
         private void SetBoxBackgroundMode()
         {
-
             Control.SetBoxBackgroundMode((int)Element.ContainerType);
+
             if (Element.ContainerType != Container.Outlined)
                 Control.BoxBackgroundColor = Color.FromHex("#eeeeee").ToAndroid();
-            //Control.EditText.SetBackgroundColor(AColor.Transparent);
 
         }
         private void SetCounterMax()
         {
-
             Control.CounterEnabled = Element.CounterMax > 0;
             Control.CounterMaxLength = Element.CounterMax;
 
         }
+
         private void SetHelperText()
         {
-
             Control.HelperTextEnabled = !string.IsNullOrEmpty(Element.HelpText);
             Control.HelperText = Element.HelpText;
 
@@ -155,30 +135,95 @@ namespace XFControls.Droid.Renderers
             Control.Hint = Element.Placeholder;
         }
 
-        public void AfterTextChanged(IEditable s)
-        {
-
-        }
-
-        public void BeforeTextChanged(ICharSequence s, int start, int count, int after)
-        {
-
-        }
-
         public bool OnEditorAction(TextView v, [GeneratedEnum] ImeAction actionId, KeyEvent e)
         {
-            if (Element == null || Control == null || Control.Handle == IntPtr.Zero || Control.EditText == null || Control.EditText.Handle == IntPtr.Zero)
+            if (Element == null || !Control.IsAlive() || !Control.EditText.IsAlive())
                 return false;
 
             if ((actionId != ImeAction.ImeNull) || ((actionId == ImeAction.ImeNull) && (e.KeyCode == Keycode.Enter)))
             {
                 Control.ClearFocus();
-                //HideKeyboard();
                 ((IEntryController)Element).SendCompleted();
             }
 
             return true;
         }
+
+        #region ITextWatcher
+
+        public virtual void OnTextChanged(ICharSequence s, int start, int before, int count)
+        {
+            if ((!Element.IsAlive() && (s.Length() == 0)) || !Control.IsAlive() || !Control.EditText.IsAlive())
+                return;
+
+            ((IElementController)Element)?.SetValueFromRenderer(Entry.TextProperty, s.ToString());
+        }
+
+        public void AfterTextChanged(IEditable s)
+        {
+        }
+
+        public void BeforeTextChanged(ICharSequence s, int start, int count, int after)
+        {
+        }
+
+        #endregion
     }
 
+    internal static class ColorHelper
+    {
+        public static global::Android.Graphics.Color ConvertToAndroid(Color? colorToConvert, Color defaultValue)
+        {
+            return (colorToConvert ?? defaultValue).ToAndroid();
+        }
+    }
+
+    internal static class ContextExtensions
+    {
+        public static Drawable TryGetDrawable(this Context context, string drawableName)
+        {
+            return !string.IsNullOrWhiteSpace(drawableName)
+                    ? context.GetDrawable(drawableName) : null;
+        }
+    }
+
+    internal static class VisualElementExtensions
+    {
+        public static bool IsAlive<T>(this VisualElementRenderer<T> renderer) where T : VisualElement
+        {
+            if (renderer == null)
+                return false;
+
+            var element = renderer.Element;
+            if (element is Entry entryElement)
+            {
+                if (string.IsNullOrWhiteSpace(entryElement.Text))
+                    return false;
+            }
+
+            if (element is Label labelElement)
+            {
+                if (string.IsNullOrWhiteSpace(labelElement.Text))
+                    return false;
+            }
+
+            return element != null;
+        }
+    }
+
+    internal static class JavaObjectExtensions
+    {
+        public static bool IsDisposed(this Java.Lang.Object obj)
+        {
+            return obj.Handle == IntPtr.Zero;
+        }
+
+        public static bool IsAlive(this Java.Lang.Object obj)
+        {
+            if (obj == null)
+                return false;
+
+            return !obj.IsDisposed();
+        }
+    }
 }
