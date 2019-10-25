@@ -27,10 +27,10 @@ namespace XFControls.Droid.Renderers
     public class EntryCustomRenderer : FormsAppCompat.ViewRenderer<TextInput, TextInputLayout>, ITextWatcher,
         TextView.IOnEditorActionListener
     {
-        private const int DefaultPadding = 20;
+        private const int DefaultPadding = 40;
         private static readonly Color SemiTransparent = Color.FromHex("#80000000");
 
-        protected AColor GetPlaceholderColor() => ColorHelper.ConvertToAndroid(Element?.PlaceholderColor);
+        protected AColor GetPlaceholderColor() => ColorHelper.ConvertToAndroid(Element?.PlaceholderColor,Color.LightGray);
 
         public EntryCustomRenderer(Context context) : base(context)
         {
@@ -94,7 +94,7 @@ namespace XFControls.Droid.Renderers
 
         private void SetBorderRadius()
         {
-            var sidePadding = Element.BorderRadius >= 40 ? 50 : DefaultPadding;
+            var sidePadding = DefaultPadding;
 
             Control.SetBoxCornerRadii(Element.BorderRadius, Element.BorderRadius,
                 GetBottomBorderRadius(), GetBottomBorderRadius());
@@ -209,10 +209,12 @@ namespace XFControls.Droid.Renderers
 
             return element != null;
         }
+
     }
 
     internal static class JavaObjectExtensions
     {
+       
         public static bool IsDisposed(this Java.Lang.Object obj)
         {
             return obj.Handle == IntPtr.Zero;

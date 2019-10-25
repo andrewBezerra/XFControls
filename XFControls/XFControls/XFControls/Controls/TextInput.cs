@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Xamarin.Forms;
 
 namespace XFControls.Controls
@@ -85,6 +86,19 @@ namespace XFControls.Controls
 
         public Container ContainerType { get; set; } = Container.Filled;
 
+        public  bool IsDisposed()
+        {
+            return this == null;
+        }
+
+        public  bool IsAlive()
+        {
+            if (this == null)
+                return false;
+
+            return !this.IsDisposed();
+        }
+
     }
     public enum Container
     {
@@ -92,4 +106,5 @@ namespace XFControls.Controls
         Filled,
         Outlined
     }
+
 }

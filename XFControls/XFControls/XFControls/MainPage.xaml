@@ -7,10 +7,28 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <StackLayout VerticalOptions="CenterAndExpand">
+    <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
         <!--  Place new controls here  -->
+        <Label
+            FontAttributes="Bold"
+            FontSize="30"
+            Text="TextInputLayout" />
+        <Label FontSize="20" Text="Container Type: Outlined" />
         <controls:TextInput
+            BorderRadius="0"
             ContainerType="Outlined"
+            Keyboard="Email"
+            Placeholder="E-mail" />
+        <Label FontSize="20" Text="Container Type: Filled" />
+        <controls:TextInput
+            BorderRadius="0"
+            ContainerType="Filled"
+            Keyboard="Email"
+            Placeholder="E-mail" />
+        <Label FontSize="20" Text="Container Type: None" />
+        <controls:TextInput
+            BorderRadius="0"
+            ContainerType="None"
             Keyboard="Email"
             Placeholder="E-mail" />
     </StackLayout>
