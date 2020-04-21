@@ -1,24 +1,24 @@
-using System;
 using Android.Content;
+using Android.Content.Res;
+using Android.Graphics.Drawables;
 using Android.Runtime;
+using Android.Support.Design.Widget;
+using Android.Support.V7.Widget;
+using Android.Text;
+using Android.Text.Method;
+using Android.Util;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
+using Java.Lang;
+using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+using XFControls.Controls;
+using XFControls.Droid.Renderers;
 using AColor = Android.Graphics.Color;
 using Color = Xamarin.Forms.Color;
 using FormsAppCompat = Xamarin.Forms.Platform.Android.AppCompat;
-using Android.Support.Design.Widget;
-using Xamarin.Forms.Platform.Android;
-using Android.Support.V7.Widget;
-using Android.Content.Res;
-using Android.Util;
-using Android.Text.Method;
-using Java.Lang;
-using Android.Text;
-using Android.Views.InputMethods;
-using XFControls.Controls;
-using XFControls.Droid.Renderers;
-using Android.Graphics.Drawables;
 
 [assembly: ExportRenderer(typeof(TextInput), typeof(EntryCustomRenderer))]
 
@@ -30,7 +30,7 @@ namespace XFControls.Droid.Renderers
         private const int DefaultPadding = 40;
         private static readonly Color SemiTransparent = Color.FromHex("#80000000");
 
-        protected AColor GetPlaceholderColor() => ColorHelper.ConvertToAndroid(Element?.PlaceholderColor,Color.LightGray);
+        protected AColor GetPlaceholderColor() => ColorHelper.ConvertToAndroid(Element?.PlaceholderColor, Color.LightGray);
 
         public EntryCustomRenderer(Context context) : base(context)
         {
@@ -55,7 +55,7 @@ namespace XFControls.Droid.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<TextInput> e)
         {
             base.OnElementChanged(e);
-            
+
             if (!(Control is TextInputLayout))
                 SetNativeControl(CreateNativeControl());
 
@@ -64,6 +64,7 @@ namespace XFControls.Droid.Renderers
             Control.EditText.ImeOptions = ImeAction.Done;
             Control.EditText.SetElegantTextHeight(true);
 
+            SetBorderColor();
             SetHintText();
             SetHelperText();
             SetBoxBackgroundMode();
@@ -71,6 +72,11 @@ namespace XFControls.Droid.Renderers
             SetCounterMax();
             SetPasswordMode();
             SetIcons();
+        }
+
+        private void SetBorderColor()
+        {
+            Control.BoxStrokeColor = ColorHelper.ConvertToAndroid(Element.BorderColor, Color.Gray);
         }
 
         private void SetIcons()
@@ -81,6 +87,7 @@ namespace XFControls.Droid.Renderers
             if (!string.IsNullOrEmpty(Element.LeadingIcon) || !string.IsNullOrEmpty(Element.TrailingIcon))
                 Control.EditText.CompoundDrawablePadding = DefaultPadding;
         }
+       
 
         private void SetPasswordMode()
         {
@@ -100,7 +107,6 @@ namespace XFControls.Droid.Renderers
                 GetBottomBorderRadius(), GetBottomBorderRadius());
 
             Control.EditText.SetPadding(sidePadding, DefaultPadding, sidePadding, DefaultPadding);
-
         }
 
         private int GetBottomBorderRadius()
@@ -115,21 +121,20 @@ namespace XFControls.Droid.Renderers
 
             if (Element.ContainerType != Container.Outlined)
                 Control.BoxBackgroundColor = Color.FromHex("#eeeeee").ToAndroid();
-
         }
+
         private void SetCounterMax()
         {
             Control.CounterEnabled = Element.CounterMax > 0;
             Control.CounterMaxLength = Element.CounterMax;
-
         }
 
         private void SetHelperText()
         {
             Control.HelperTextEnabled = !string.IsNullOrEmpty(Element.HelpText);
             Control.HelperText = Element.HelpText;
-
         }
+
         private void SetHintText()
         {
             Control.Hint = Element.Placeholder;
@@ -167,7 +172,7 @@ namespace XFControls.Droid.Renderers
         {
         }
 
-        #endregion
+        #endregion ITextWatcher
     }
 
     internal static class ColorHelper
@@ -209,12 +214,10 @@ namespace XFControls.Droid.Renderers
 
             return element != null;
         }
-
     }
 
     internal static class JavaObjectExtensions
     {
-       
         public static bool IsDisposed(this Java.Lang.Object obj)
         {
             return obj.Handle == IntPtr.Zero;

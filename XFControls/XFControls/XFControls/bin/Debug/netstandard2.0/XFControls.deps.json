@@ -11,7 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675"
+          "Xamarin.Forms": "4.5.0.617"
         },
         "runtime": {
           "XFControls.dll": {}
@@ -42,19 +42,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.3.0.908675": {
+      "Xamarin.Forms/4.5.0.617": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.336"
+            "fileVersion": "4.5.0.216"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.336"
+            "fileVersion": "4.5.0.216"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.3.0.336"
+            "fileVersion": "4.5.0.216"
           }
         }
       }
@@ -94,12 +94,12 @@
       "path": "xamarin.essentials/1.3.1",
       "hashPath": "xamarin.essentials.1.3.1.nupkg.sha512"
     },
-    "Xamarin.Forms/4.3.0.908675": {
+    "Xamarin.Forms/4.5.0.617": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kXrbXKJvXYF4cKjs1Jsb+pQFEnFGl0AONYSeABjgOJqN/o5Y4zC0XXQ68xiUI81PKQTuRB5F3oDom2t5ccJDZw==",
-      "path": "xamarin.forms/4.3.0.908675",
-      "hashPath": "xamarin.forms.4.3.0.908675.nupkg.sha512"
+      "sha512": "sha512-tB/h7bHEylOgNT+521SRnbmO+LCe5R3lPboD/icCMpa+FdjmxhZQ7+fIIPFDbhY2dqYetGRnAeJWXVx4NLbmAw==",
+      "path": "xamarin.forms/4.5.0.617",
+      "hashPath": "xamarin.forms.4.5.0.617.nupkg.sha512"
     }
   }
 }

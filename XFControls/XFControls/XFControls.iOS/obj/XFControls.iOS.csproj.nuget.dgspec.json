@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj": {}
+    "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj": {}
   },
   "projects": {
-    "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj": {
+    "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj",
         "projectName": "XFControls.iOS",
-        "projectPath": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\obj\\",
+        "projectPath": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\XFControls.iOS.csproj",
+        "packagesPath": "C:\\Users\\Carlos Bezerra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carlos Bezerra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,13 +27,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj": {
-                "projectPath": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj"
+              "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj": {
+                "projectPath": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj"
               }
             }
           }
@@ -52,7 +52,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.908675, )"
+              "version": "[4.5.0.617, )"
             }
           }
         }
@@ -69,21 +69,20 @@
         }
       }
     },
-    "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj": {
+    "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj",
         "projectName": "XFControls",
-        "projectPath": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\XFControls\\XFControls\\XFControls\\XFControls\\obj\\",
+        "projectPath": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\XFControls.csproj",
+        "packagesPath": "C:\\Users\\Carlos Bezerra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Carlos Bezerra\\Source\\Repos\\andrewBezerra\\XFControls\\XFControls\\XFControls\\XFControls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carlos Bezerra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -92,7 +91,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -120,7 +119,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.908675, )"
+              "version": "[4.5.0.617, )"
             }
           },
           "imports": [
@@ -133,7 +132,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

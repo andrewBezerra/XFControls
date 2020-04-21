@@ -13,21 +13,37 @@
             FontAttributes="Bold"
             FontSize="30"
             Text="TextInputLayout" />
-        <Label FontSize="20" Text="Container Type: Outlined" />
+        <Label FontSize="20" Text="Container Type: Filled with Help text and Counter" />
         <controls:TextInput
+            x:Name="TxtOutlined"
             BorderRadius="0"
-            ContainerType="Outlined"
+            ContainerType="Filled"
+            CounterMax="30"
+            HelpText="Type something here."
             Keyboard="Email"
-            Placeholder="E-mail" />
-        <Label FontSize="20" Text="Container Type: Filled" />
+            Placeholder="E-mail"
+            PlaceholderColor="Orange" />
+        <Label FontSize="20" Text="Password with Container Type: Filled" />
         <controls:TextInput
             BorderRadius="0"
             ContainerType="Filled"
+            CounterMax="30"
+            HelpText="Type your password"
+            IsPassword="true"
+            Keyboard="Default"
+            Placeholder="Password"
+            PlaceholderColor="Green" />
+        <Label BindingContext="{x:Reference Name=TxtOutlined}" Text="{Binding Text}" />
+        <Label FontSize="20" Text="Container Type: Outlined Border Radius:10" />
+        <controls:TextInput
+            BorderColor="CadetBlue"
+            BorderRadius="10"
+            ContainerType="Outlined"
             Keyboard="Email"
             Placeholder="E-mail" />
         <Label FontSize="20" Text="Container Type: None" />
         <controls:TextInput
-            BorderRadius="0"
+            BorderRadius="20"
             ContainerType="None"
             Keyboard="Email"
             Placeholder="E-mail" />

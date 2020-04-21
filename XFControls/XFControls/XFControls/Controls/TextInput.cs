@@ -1,6 +1,4 @@
-﻿
-using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XFControls.Controls
 {
@@ -30,8 +28,6 @@ namespace XFControls.Controls
             set => SetValue(TrailingIconProperty, value);
         }
 
-
-
         public static readonly BindableProperty BorderRadiusProperty =
            BindableProperty.Create(nameof(BorderRadius),
            typeof(int),
@@ -56,8 +52,6 @@ namespace XFControls.Controls
             set => SetValue(CounterMaxProperty, value);
         }
 
-
-
         public static readonly BindableProperty HelpTextProperty =
           BindableProperty.Create(nameof(HelpText),
           typeof(string),
@@ -69,8 +63,6 @@ namespace XFControls.Controls
             get => (string)GetValue(HelpTextProperty);
             set => SetValue(HelpTextProperty, value);
         }
-
-
 
         public static readonly BindableProperty ErrorTextProperty =
         BindableProperty.Create(nameof(ErrorText),
@@ -86,12 +78,12 @@ namespace XFControls.Controls
 
         public Container ContainerType { get; set; } = Container.Filled;
 
-        public  bool IsDisposed()
+        public bool IsDisposed()
         {
             return this == null;
         }
 
-        public  bool IsAlive()
+        public bool IsAlive()
         {
             if (this == null)
                 return false;
@@ -99,12 +91,24 @@ namespace XFControls.Controls
             return !this.IsDisposed();
         }
 
+        public static readonly BindableProperty BorderColorProperty =
+        BindableProperty.Create(nameof(BorderColor),
+        typeof(Color),
+        typeof(TextInput),
+        null);
+        public Color BorderColor
+        {
+            get => (Color)GetValue(BorderColorProperty);
+            set => SetValue(BorderColorProperty, value);
+
+        }
+
     }
+
     public enum Container
     {
         None,
         Filled,
         Outlined
     }
-
 }

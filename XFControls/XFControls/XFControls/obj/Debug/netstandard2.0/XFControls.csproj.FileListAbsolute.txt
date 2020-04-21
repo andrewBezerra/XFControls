@@ -11,3 +11,17 @@ C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\Xaml
 C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.dll
 C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\ref\XFControls.dll
 C:\DEV\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.pdb
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.deps.json
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.dll
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\ref\XFControls.dll
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\bin\Debug\netstandard2.0\XFControls.pdb
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.csproj.CoreCompileInputs.cache
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.AssemblyInfoInputs.cache
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.AssemblyInfo.cs
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.dll
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\ref\XFControls.dll
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.pdb
+C:\Users\Carlos Bezerra\Source\Repos\andrewBezerra\XFControls\XFControls\XFControls\XFControls\obj\Debug\netstandard2.0\XFControls.csprojAssemblyReference.cache
