@@ -1,8 +1,8 @@
 # XFControls
-Custom Renderers - TextInputLayout
+Custom Renderer - TextInputLayout
 ===============
 
-My custom renderer implementation of TextInputLayout to Xamarin.Forms
+My custom renderer implementation of TextInputLayout in Xamarin.Forms
 
 Screenshots - Android
 ===
