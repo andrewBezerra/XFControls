@@ -6,4 +6,4 @@ My custom renderer implementation of TextInputLayout to Xamarin.Forms
 
 Screenshots - Android
 ===
-![Example](ScreenShots/TextInputLayour.jpeg)
+![Example](ScreenShots/TextInputLayout.jpeg)
